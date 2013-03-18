@@ -136,7 +136,6 @@
         position: absolute;
         top: 0;
         bottom: -6px;
-        z-index: -10;
 }
 .rickshaw_graph .annotation_range.active {
         display: block;
@@ -318,4 +317,74 @@
 .rickshaw_legend li:active {
 	background: rgba(255, 255, 255, 0.2);
 	border-radius: 3px;
+}
+
+.rickshaw_legend .legend_header {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 100%;
+}
+
+.rickshaw_legend .legend_header .legend_button {
+  display: inline-block;
+  *display: inline;
+  padding: 2px 10px;
+  margin-bottom: 0;
+  *margin-left: .3em;
+  font-size: 11.9px;
+  line-height: 20px;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #363636;
+  *background-color: #222222;
+  background-image: -moz-linear-gradient(top, #444444, #222222);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#444444), to(#222222));
+  background-image: -webkit-linear-gradient(top, #444444, #222222);
+  background-image: -o-linear-gradient(top, #444444, #222222);
+  background-image: linear-gradient(to bottom, #444444, #222222);
+  background-repeat: repeat-x;
+  border: 1px solid #cccccc;
+  *border: 0;
+  border-color: #222222 #222222 #000000;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff444444', endColorstr='#ff222222', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  *zoom: 1;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+     -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.rickshaw_legend .legend_header .legend_button:first-child {
+  *margin-left: 0;
+}
+
+.rickshaw_legend .legend_header .legend_button:hover,
+.rickshaw_legend .legend_header .legend_button:focus {
+  color: #ffffff;
+  background-color: #222222;
+  *background-color: #151515;
+  text-decoration: none;
+  background-position: 0 -15px;
+  -webkit-transition: background-position 0.1s linear;
+     -moz-transition: background-position 0.1s linear;
+       -o-transition: background-position 0.1s linear;
+          transition: background-position 0.1s linear;
+}
+
+.rickshaw_legend .legend_header .legend_button:active {
+  background-color: #080808 \9;
+}
+
+.rickshaw_legend .legend_header .legend_button:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
 }

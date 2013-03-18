@@ -7,11 +7,9 @@ Rickshaw.Graph.Legend = Rickshaw.Class.create({
 		this.element = args.element;
 		this.graph = args.graph;
 		this.naturalOrder = args.naturalOrder;
-
 		this.element.classList.add('rickshaw_legend');
 		this.list = document.createElement('ul');
 		this.element.appendChild(this.list);
-
 		this.lines = [];
 		this.updateCallbacks = [];
 
@@ -36,7 +34,7 @@ Rickshaw.Graph.Legend = Rickshaw.Class.create({
 		if (!this.naturalOrder) {
 			series = series.reverse();
 		}
-
+		
 		series.forEach(function(s) {
 			this.addLine(s);
 
@@ -53,8 +51,6 @@ Rickshaw.Graph.Legend = Rickshaw.Class.create({
 	},
 
 	addLine: function(series) {
-
-		console.log('addline', series.name);
 
 		var line = document.createElement('li');
 		line.className = 'line';

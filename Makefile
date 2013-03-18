@@ -16,6 +16,7 @@ JS_FILES=\
 	src/js/Rickshaw.Compat.ClassList.js\
 	src/js/Rickshaw.Graph.js\
 	src/js/Rickshaw.Fixtures.Color.js\
+	src/js/Rickshaw.Fixtures.LocalTime.js\
 	src/js/Rickshaw.Fixtures.RandomData.js\
 	src/js/Rickshaw.Fixtures.Time.js\
 	src/js/Rickshaw.Fixtures.Number.js\
