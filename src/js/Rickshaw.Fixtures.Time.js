@@ -111,11 +111,11 @@ Rickshaw.Fixtures.Time = function() {
 
 Rickshaw.Fixtures.Time.formatMSMHD = function(y) {
 	abs_y = Math.abs(y);
-	if (abs_y >= 86400000)   { return y / 86400000 + "d" } 
-	else if (abs_y >= 3600000) { return y / 3600000 + "h" } 
-	else if (abs_y >= 60000)    { return y / 60000 + "m" } 
-	else if (abs_y >= 1000)       { return y / 1000 + "s" }
-	else if (abs_y < 1 && y > 0)  { return y.toFixed(2) + "ms" }
-	else if (abs_y === 0)         { return '' }
-	else                      { return y }
+	if (abs_y >= 86400000)   { return (y / 86400000).toFixed(2).replace(/[.,]00$/, "") + "d" } 
+	else if (abs_y >= 3600000) { return (y / 3600000).toFixed(2).replace(/[.,]00$/, "") + "h" } 
+	else if (abs_y >= 60000)    { return (y / 60000).toFixed(2).replace(/[.,]00$/, "") + "m" } 
+	else if (abs_y >= 1000)       { return (y / 1000).toFixed(2).replace(/[.,]00$/, "") + "s" }
+	else if (abs_y < 1 && y > 0)  { return y.toFixed(2).replace(/[.,]00$/, "") + "ms" }
+	else if (abs_y === 0)         { return '0ms' }
+	else                      { return y + "ms" }
 };

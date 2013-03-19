@@ -853,15 +853,15 @@ Rickshaw.Fixtures.LocalTime = function() {
 		}, {
 			name: 'minute',
 			seconds: 60,
-			formatter: function(d) { return d.getMinutes() }
+			formatter: function(d) { return self.formatTime(d) }
 		}, {
 			name: '15 second',
 			seconds: 15,
-			formatter: function(d) { return d.getSeconds() + 's' }
+			formatter: function(d) { return self.formatTime(d) }
 		}, {
 			name: 'second',
 			seconds: 1,
-			formatter: function(d) { return d.getSeconds() + 's' }
+			formatter: function(d) { return self.formatTime(d) }
 		}
 	];
 
@@ -921,13 +921,13 @@ Rickshaw.Fixtures.LocalTime = function() {
 
 Rickshaw.Fixtures.LocalTime.formatMSMHD = function(y) {
 	abs_y = Math.abs(y);
-	if (abs_y >= 86400000)   { return y / 86400000 + "d" } 
-	else if (abs_y >= 3600000) { return y / 3600000 + "h" } 
-	else if (abs_y >= 60000)    { return y / 60000 + "m" } 
-	else if (abs_y >= 1000)       { return y / 1000 + "s" }
-	else if (abs_y < 1 && y > 0)  { return y.toFixed(2) + "ms" }
-	else if (abs_y === 0)         { return '' }
-	else                      { return y }
+	if (abs_y >= 86400000)   { return (y / 86400000).toFixed(2).replace(/[.,]00$/, "") + "d" } 
+	else if (abs_y >= 3600000) { return (y / 3600000).toFixed(2).replace(/[.,]00$/, "") + "h" } 
+	else if (abs_y >= 60000)    { return (y / 60000).toFixed(2).replace(/[.,]00$/, "") + "m" } 
+	else if (abs_y >= 1000)       { return (y / 1000).toFixed(2).replace(/[.,]00$/, "") + "s" }
+	else if (abs_y < 1 && y > 0)  { return y.toFixed(2).replace(/[.,]00$/, "") + "ms" }
+	else if (abs_y === 0)         { return '0ms' }
+	else                      { return y + "ms" }
 };Rickshaw.namespace('Rickshaw.Fixtures.RandomData');
 
 Rickshaw.Fixtures.RandomData = function(timeInterval) {
@@ -1073,13 +1073,13 @@ Rickshaw.Fixtures.Time = function() {
 
 Rickshaw.Fixtures.Time.formatMSMHD = function(y) {
 	abs_y = Math.abs(y);
-	if (abs_y >= 86400000)   { return y / 86400000 + "d" } 
-	else if (abs_y >= 3600000) { return y / 3600000 + "h" } 
-	else if (abs_y >= 60000)    { return y / 60000 + "m" } 
-	else if (abs_y >= 1000)       { return y / 1000 + "s" }
-	else if (abs_y < 1 && y > 0)  { return y.toFixed(2) + "ms" }
-	else if (abs_y === 0)         { return '' }
-	else                      { return y }
+	if (abs_y >= 86400000)   { return (y / 86400000).toFixed(2).replace(/[.,]00$/, "") + "d" } 
+	else if (abs_y >= 3600000) { return (y / 3600000).toFixed(2).replace(/[.,]00$/, "") + "h" } 
+	else if (abs_y >= 60000)    { return (y / 60000).toFixed(2).replace(/[.,]00$/, "") + "m" } 
+	else if (abs_y >= 1000)       { return (y / 1000).toFixed(2).replace(/[.,]00$/, "") + "s" }
+	else if (abs_y < 1 && y > 0)  { return y.toFixed(2).replace(/[.,]00$/, "") + "ms" }
+	else if (abs_y === 0)         { return '0ms' }
+	else                      { return y + "ms" }
 };
 Rickshaw.namespace('Rickshaw.Fixtures.Number');
 
