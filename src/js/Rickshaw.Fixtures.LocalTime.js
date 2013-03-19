@@ -38,13 +38,21 @@ Rickshaw.Fixtures.LocalTime = function() {
 			seconds: 3600,
 			formatter: function(d) { return self.formatTime(d) }
 		}, {
+			name: '15 minute',
+			seconds: 60 * 15,
+			formatter: function(d) { return self.formatTime(d) }
+		}, {
 			name: 'minute',
 			seconds: 60,
-			formatter: function(d) { return self.formatTime(d) }
+			formatter: function(d) { return d.getMinutes() }
+		}, {
+			name: '15 second',
+			seconds: 15,
+			formatter: function(d) { return d.getSeconds() + 's' }
 		}, {
 			name: 'second',
 			seconds: 1,
-			formatter: function(d) { return self.formatTime(d) }
+			formatter: function(d) { return d.getSeconds() + 's' }
 		}
 	];
 
@@ -99,4 +107,16 @@ Rickshaw.Fixtures.LocalTime = function() {
 
 		return Math.ceil(time / unit.seconds) * unit.seconds;
 	};
+
+};
+
+Rickshaw.Fixtures.LocalTime.formatMSMHD = function(y) {
+	abs_y = Math.abs(y);
+	if (abs_y >= 86400000)   { return y / 86400000 + "d" } 
+	else if (abs_y >= 3600000) { return y / 3600000 + "h" } 
+	else if (abs_y >= 60000)    { return y / 60000 + "m" } 
+	else if (abs_y >= 1000)       { return y / 1000 + "s" }
+	else if (abs_y < 1 && y > 0)  { return y.toFixed(2) + "ms" }
+	else if (abs_y === 0)         { return '' }
+	else                      { return y }
 };

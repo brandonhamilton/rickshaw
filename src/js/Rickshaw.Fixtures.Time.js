@@ -108,3 +108,14 @@ Rickshaw.Fixtures.Time = function() {
 		return Math.ceil(time / unit.seconds) * unit.seconds;
 	};
 };
+
+Rickshaw.Fixtures.Time.formatMSMHD = function(y) {
+	abs_y = Math.abs(y);
+	if (abs_y >= 86400000)   { return y / 86400000 + "d" } 
+	else if (abs_y >= 3600000) { return y / 3600000 + "h" } 
+	else if (abs_y >= 60000)    { return y / 60000 + "m" } 
+	else if (abs_y >= 1000)       { return y / 1000 + "s" }
+	else if (abs_y < 1 && y > 0)  { return y.toFixed(2) + "ms" }
+	else if (abs_y === 0)         { return '' }
+	else                      { return y }
+};
